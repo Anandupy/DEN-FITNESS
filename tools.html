@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Use Den Fitness Saki Naka's elite gym calculators. Check BMI and Calories.">
+  <title>FITNESS TOOLS & CALCULATORS | DEN FITNESS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="custom-cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="enhanced_logo.png" alt="Enhanced Den Fitness Logo">
+        DEN <span>FITNESS</span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <div class="mobile-toggle" id="mobile-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tools.html" class="btn" style="padding: 10px 20px; font-size: 0.8rem; margin-left: 10px;">Calculators</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-hero reveal active">
+    <div class="container text-center">
+      <h1 class="text-glow">PLAN YOUR POWER</h1>
+      <p style="color: var(--text-muted); font-size: 1rem; margin-top: 15px;">Elite metrics tracking tools for health transformation.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="bento-grid" style="grid-template-columns: 1fr; grid-auto-rows: min-content; gap: 30px;">
+        
+        <!-- BMI Calculator -->
+        <div class="calculator-card reveal">
+          <h2 style="color: var(--primary-color); margin-bottom: 20px; text-transform: uppercase;">BMI CHECK</h2>
+          <form style="display: grid; gap: 20px;">
+            <input type="number" id="bmi-weight" placeholder="Weight (kg)">
+            <input type="number" id="bmi-height" placeholder="Height (cm)">
+            <button id="btn-bmi" class="btn" style="width: 100%; justify-content: center;">Calculate BMI</button>
+          </form>
+          <div id="bmi-result" style="display: none; margin-top: 30px; padding: 25px; border: 1px solid var(--primary-color); border-radius: 20px; text-align: center;">
+            <p style="font-size: 1rem;">YOUR SCORE: <span id="bmi-val" style="font-size: 2.5rem; font-weight: 900; display: block; color: #fff;"></span></p>
+            <p id="bmi-text" style="color: var(--primary-color); font-weight: 700;"></p>
+          </div>
+        </div>
+
+        <!-- Diet/Macro Calculator -->
+        <div class="calculator-card reveal" style="transition-delay: 0.1s;">
+          <h2 style="color: var(--primary-color); margin-bottom: 20px; text-transform: uppercase;">ELITE NUTRITION</h2>
+          <form style="display: grid; gap: 15px;">
+            <input type="number" id="diet-weight" placeholder="Weight (kg)">
+            <input type="number" id="diet-height" placeholder="Height (cm)">
+            <input type="number" id="diet-age" placeholder="Age">
+            <select id="diet-activity">
+              <option value="1.55">Moderately Active (Default)</option>
+              <option value="1.2">Sedentary</option>
+              <option value="1.725">Very Active</option>
+            </select>
+            <button id="btn-diet" class="btn" style="width: 100%; justify-content: center;">Generate Macro Plan</button>
+          </form>
+
+          <div id="diet-result" style="display: none; margin-top: 30px; padding: 25px; background: rgba(0,0,0,0.5); border-radius: 20px; border: 1px solid var(--primary-color);">
+            <p style="text-align: center;">TARGET CALORIES: <span id="tdee-val" style="font-size: 2.2rem; font-weight: 900; display: block; color: #fff;"></span></p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; margin-top: 20px;">
+              <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 12px;">
+                <p style="font-size: 0.7rem;">PRO</p><b id="mac-pro" style="color: var(--primary-color);"></b>
+              </div>
+              <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 12px;">
+                <p style="font-size: 0.7rem;">FAT</p><b id="mac-fat" style="color: var(--primary-color);"></b>
+              </div>
+              <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 12px;">
+                <p style="font-size: 0.7rem;">CARB</p><b id="mac-carb" style="color: var(--primary-color);"></b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #000; padding: 40px 0; border-top: 1px solid var(--glass-border); text-align: center;">
+    <div class="container">
+      <p style="color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 DEN FITNESS. Precision Tools. Saki Naka.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
